@@ -1,0 +1,99 @@
+html {
+    scroll-behavior: smooth;
+    margin: 5px;
+}
+
+body {
+    overflow-x: hidden;
+    text-align: center;
+}
+.hero {
+    background-image: url(./assets/bannerimg.svg);
+    height: 200px;
+    background-repeat: no-repeat;
+    color: white;
+    
+}
+.hero-heading {
+    padding: 40px 350px 40px 40px;
+}
+
+.home-1 {
+    display: flex;
+    width: 100%;
+   align-items: center;
+}
+
+.main-content {
+    margin-top: 90px;
+}
+.hero-para,
+.home-bike {
+    flex: 0 0 auto;
+}
+
+.hero-para {
+    width: 70%;
+    font-size: 25px;
+    text-align: justify;
+    font-weight: 500;
+    align-items: center;
+}
+
+.home-bike {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%)
+}
+h2 {
+    text-decoration: underline;
+    margin: 15px;
+}
+
+.home-bike img {
+    width: 400px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.home-access img {
+    width: 380px;
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.home-2 {
+    display: flex;
+}
+
+@media screen and (max-width: 500px) {
+.home-access img {
+            width: 350px;
+            left: 0;
+}
+
+h3 {
+    margin: 30px 15px 30px 15px;
+}
+
+.home-1 {
+    display: block;
+    width: 100%;
+}
+
+.home-1 .hero-para {
+    width: 100%;
+    margin-top: 10px;
+    text-align: justify;
+    font-weight: 500;
+    font-size: 20px;
+
+}
+.home-2 {
+    display: block;
+}
+
+
+
+}
