@@ -1,43 +1,14 @@
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { motion } from "framer-motion";
 
-function ScrollReveal({ children }) {
-  const ref = useRef(null)
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-  offset: ["start 0.95", "end 0.4"],
-})
-
-const opacity = useTransform(scrollYProgress, [0, 1], [0.7, 1])
-const y = useTransform(scrollYProgress, [0, 1], [40, 0])
-
+export default function Scroll({ children }) {
   return (
     <motion.div
-      ref={ref}
-      style={{ opacity, y }}
-      className="scroll-section"
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-function Motion({ children }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.2 }}
-      style={{ position: "relative" }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
     >
       {children}
     </motion.div>
-  )
-  }
-  
-export default ScrollReveal
-export { Motion }
-
-
+  );
+}
