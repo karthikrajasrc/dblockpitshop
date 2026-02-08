@@ -1,14 +1,31 @@
-import Bike from "../assets/HomeBike.svg";
 import Acess from "../assets/Access.svg";
 import { motion } from "framer-motion";
 import "../components/navbar.css";
 import logo from "../assets/logo.webp";
-
+import Beams from '../components/background';
 import Scroll from "../components/scroll"; 
+import bikesvg from "../assets/bikeimgsvg.svg"
 
 function Home() {
   return (
     <>
+      <div style={{   width: '100%',
+  height: '100vh',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  zIndex: -1  }}>
+  <Beams
+    beamWidth={1.3}
+    beamHeight={30}
+    beamNumber={50}
+    lightColor="#ffffff"
+    speed={2.9}
+    noiseIntensity={1.05}
+    scale={0.2}
+    rotation={30}
+  />
+</div>
       <div className="main-content">
         <Scroll>
           <div className="hero">
@@ -22,7 +39,7 @@ function Home() {
               <p>At PIT Shop, we bring you premium bike accessories designed to enhance performance, style, and safety. From high-quality helmets and riding gear to performance upgrades and custom add-ons, everything you need to upgrade your ride is available in one place. Whether you're a daily rider or a speed enthusiast, PIT Shop helps you ride with confidence and attitude.🔥 </p>
               </div>
         <div className="home-bike">
-          <motion.img src={Bike} alt="Bike" className="w-96"
+          <motion.img src={bikesvg} alt="Bike" className="w-96"
               initial={{ x: 150, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 1 }}
