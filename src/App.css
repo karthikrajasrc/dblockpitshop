@@ -3,6 +3,7 @@ html {
     overflow-x: hidden;
         padding: 0;
         margin: 0;
+        box-sizing: border-box;
 }
 
 body {
@@ -36,13 +37,15 @@ body {
                 -1px -1px 4px rgba(0, 0, 0, 0.6);
 }
 
-.home-1 {
+.home-1,
+.home-2 {
     display: flex;
     width: 100%;
-   align-items: center;
-   margin: 15px;
-   gap: 25px;
+    padding: 15px;
+    box-sizing: border-box;
+    align-items: center;
 }
+
 
 .main-content {
     margin-top: 90px;
@@ -87,17 +90,41 @@ h1 {
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
-.home-2 {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin: 15px;
-}
 
 .main-list {
     font-size: 25px;
     text-align: justify;
     margin: 25px;
+}
+.helmet-scroll {
+    overflow: hidden;
+    margin: 20px;
+}
+
+.helmet-track {
+    display: flex;
+
+    width: max-content;
+    gap: 30px;
+  
+}
+.duplicate-set {
+    display: none;
+}
+
+.helmet-track img {
+    border-radius: 30px;
+    height: 150px;
+}
+
+@keyframes scrollLoop {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .main-footer {
@@ -127,6 +154,10 @@ h1 {
                 -1px -1px 4px rgba(0, 0, 0, 0.6);
     
 }
+
+
+
+
 
 @media screen and (max-width: 500px) {
 
@@ -181,6 +212,10 @@ h1 {
     margin: 5px;
 }
 
+.main-list ul {
+    padding-left: 5px;
+}
+
 .main-footer {
     background-image: url(./assets/bikefootermedia.svg);
     background-size: cover;
@@ -189,17 +224,6 @@ h1 {
     bottom: 0;
 }
 
-
-.main-footer .footer-text {
-    font-size: 15px;
-    font-weight: bold;
-    margin-right: 150px;
-    padding-top: 235px;
-        color: #fff;
-            text-shadow:
-                2px 2px 6px rgba(0, 0, 0, 0.9),
-                -1px -1px 4px rgba(0, 0, 0, 0.6);
-}
 
 .footer-logo img {
     height: 60px;
@@ -210,4 +234,49 @@ h1 {
     margin-left: 75px;
 }
 
+.helmet-scroll {
+    width: 100%;
+    overflow: hidden;
+    margin: 15px 0;
 }
+
+.helmet-track {
+    display: flex;
+    gap: 20px;
+    animation: scrollLoop 15s linear infinite;
+}
+
+.main-footer .footer-text {
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 150px;
+    padding-top: 250px;
+    color: #fff;
+    text-shadow:
+        2px 2px 6px rgba(0, 0, 0, 0.9),
+        -1px -1px 4px rgba(0, 0, 0, 0.6);
+
+}
+
+.duplicate-set {
+    display: contents;
+}
+
+.helmet-track img {
+    width: 150px;
+    flex-shrink: 0;
+    border-radius: 30px;
+}
+
+@keyframes scrollLoop {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+}
+
